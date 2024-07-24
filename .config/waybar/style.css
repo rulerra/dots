@@ -1,0 +1,150 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Roboto";
+  font-size: 10px;
+  min-height: 0;
+}
+
+#workspaces {
+}
+
+window#waybar {
+  background: transparent;
+  color: white;
+}
+
+#window {
+  font-weight: bold;
+  font-family: "Roboto";
+}
+/*
+#workspaces {
+    padding: 6px 5px 0 5px;
+}
+*/
+
+#workspaces button {
+  padding: 0 1px 0 0;
+  background: transparent;
+  color: white;
+}
+
+#workspaces button.focused {
+  color: #c9545d;
+  border-top: 2px solid #c9545d;
+}
+
+#mode {
+  background: #64727d;
+  border-bottom: 3px solid white;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-spotify,
+#tray,
+#mode {
+  padding: 1px 5px 0 5px;
+  margin: 0 2px;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#battery {
+  background-image: url("/home/jtad/icons/bat.svg");
+  background-position: 90% 80%;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+#battery icon {
+  color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+#battery.warning:not(.charging) {
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#cpu {
+  background-image: url("/home/jtad/icons/cpu.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+#memory {
+}
+
+#network {
+  background-image: url("/home/jtad/icons/net.svg");
+  background-position: 100% 80%;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+
+#network.disconnected {
+  background: #f53c3c;
+}
+
+#pulseaudio {
+  background-image: url("/home/jtad/icons/vol.svg");
+  background-position: 5% 80%;
+  background-repeat: no-repeat;
+  background-size: 11px;
+}
+
+#pulseaudio.muted {
+}
+
+#custom-ff,
+#custom-nemo,
+#custom-chrome,
+#custom-libre {
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  min-width: 30px;
+}
+
+#custom-ff {
+  background-image: url("/home/jtad/icons/fff.svg");
+}
+
+#custom-nemo {
+  background-image: url("/home/jtad/icons/nemo.png");
+}
+#custom-chrome {
+  background-image: url("/home/jtad/icons/chrom.png");
+}
+#custom-libre {
+  background-image: url("/home/jtad/icons/libre.png");
+}
+
+/*#hyprland-workspaces {*/
+/*  padding-top: 20px;*/
+/*}*/
+
+#tray {
+}
