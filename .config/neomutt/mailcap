@@ -1,6 +1,6 @@
 text/plain; $EDITOR %s ;
-text/html; /usr/local/lib/mutt-wizard/openfile %s ; nametemplate=%s.html
-text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+text/html;                         w3m -sixel -o auto_image=TRUE -o display_image=1 -T text/html %s; nametemplate=%s.html; needsterminal
+text/html;                         w3m -I %{charset} -T text/html -cols 140 -o display_link_number=1 -dump; copiousoutput
 image/*; /usr/local/lib/mutt-wizard/openfile %s ;
 video/*; setsid mpv --quiet %s &; copiousoutput
 audio/*; mpv %s ;
