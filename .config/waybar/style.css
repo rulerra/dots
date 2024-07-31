@@ -6,9 +6,6 @@
   min-height: 0;
 }
 
-#workspaces {
-}
-
 window#waybar {
   background: black;
   color: white;
@@ -18,11 +15,6 @@ window#waybar {
   font-weight: bold;
   font-family: "Roboto";
 }
-/*
-#workspaces {
-    padding: 6px 5px 0 5px;
-}
-*/
 
 #workspaces button {
   padding: 0 1px 0 0;
@@ -42,6 +34,7 @@ window#waybar {
 
 #clock,
 #battery,
+#temperature,
 #cpu,
 #memory,
 #network,
@@ -109,7 +102,6 @@ window#waybar {
 }
 
 #pulseaudio {
-  background-image: url("/home/jtad/icons/vol.svg");
   background-position: 5% 80%;
   background-repeat: no-repeat;
   background-size: 11px;
@@ -117,34 +109,6 @@ window#waybar {
 
 #pulseaudio.muted {
 }
-
-#custom-ff,
-#custom-nemo,
-#custom-chrome,
-#custom-libre {
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 30px;
-  min-width: 30px;
-}
-
-#custom-ff {
-  background-image: url("/home/jtad/icons/fff.svg");
-}
-
-#custom-nemo {
-  background-image: url("/home/jtad/icons/nemo.png");
-}
-#custom-chrome {
-  background-image: url("/home/jtad/icons/chrom.png");
-}
-#custom-libre {
-  background-image: url("/home/jtad/icons/libre.png");
-}
-
-/*#hyprland-workspaces {*/
-/*  padding-top: 20px;*/
-/*}*/
 
 #tray {
 }
