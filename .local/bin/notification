@@ -1,0 +1,12 @@
+#!/bin/bash
+
+OUT_FILE="/home/ap/irc/irc.libera.chat/#linux/out"
+
+tail -n 0 -f "$OUT_FILE" |
+while read line; do
+  TIMESTAMP=$(echo "$line" | cut -d' ' -f1)
+  NICKNAME=$(echo "$line" | cut -d' ' -f2 | sed 's/<//;s/>//')
+  MESSAGE=$(echo "$line" | cut -d' ' -f3-)
+
+  notify-send "<$NICKNAME>: $MESSAGE"
+done

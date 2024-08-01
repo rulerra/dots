@@ -1,0 +1,29 @@
+#!/bin/bash
+
+WATCH_DIR="$HOME/irc/irc.libera.chat"
+FORBIDDEN=$(printf "\001-\011\013-\037")
+
+send_notification() {
+    notify-send -t 10000 -i network-receive "[$1] $2" "$3"
+}
+
+filter_message() {
+    grep -Ev '(has joined|has left|has quit|Ping timeout|Read error|Client Quit)' <<< "$1"
+}
+
+inotifywait -m -r -e modify --format '%w%f' "$WATCH_DIR" | while read -r FILE; do
+    if [[ "$FILE" == *"/out" ]]; then
+        SERVER=$(basename "$(dirname "$(dirname "$FILE")")")
+        ENTITY=$(basename "$(dirname "$FILE")")
+
+        if [[ -s "$FILE" ]]; then
+            read -r TIMESTAMP NICKNAME MESSAGE < <(tail -n1 "$FILE" | tr -d "$FORBIDDEN" | sed 's/^ *\([^ ]*\) *\([^ ]*\) *\(.*\)/\1 \2 \3/')
+
+            FILTERED_MESSAGE=$(filter_message "$MESSAGE")
+
+            if [[ -n "$FILTERED_MESSAGE" ]]; then
+                send_notification "$ENTITY" "$NICKNAME" "$FILTERED_MESSAGE"
+            fi
+        fi
+    fi
+done
