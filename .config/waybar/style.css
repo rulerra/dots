@@ -1,114 +1,79 @@
+@define-color accent #383838;
+@define-color text #f8f8f8;
+@define-color invText #f8f8f8;
+/* text when background is accent */
+@define-color bg #181818;
+
+
+/* @import "./wal.css";
+@define-color accent @color5;
+@define-color bg @background;
+@define-color text @foreground; */
+
+@import "./base16/base16-default-dark.css";
+
+@define-color accent @base01;
+@define-color text @base07;
+@define-color invText @base07;
+/* text when background is accent */
+@define-color bg @base00;
+
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "Roboto";
-  font-size: 10px;
-  min-height: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12px;
+  border-radius: 0px;
+  /* :[ */
+  min-height: 0px;
 }
 
 window#waybar {
-  background: black;
-  color: white;
+  background-color: @accent;
+  color: @text;
+  opacity: 1;
 }
 
-#window {
-  font-weight: bold;
-  font-family: "Roboto";
+#workspaces {
+  background-color: transparent;
 }
 
 #workspaces button {
-  padding: 0 1px 0 0;
-  background: transparent;
-  color: white;
+  padding: 0 5px;
+	color: @text;
 }
 
-#workspaces button.focused {
-  color: #c9545d;
-  border-top: 2px solid #c9545d;
+#workspaces button.active {
+  background-color: @accent;
+  color: @invText;
+  /* color: @background; */
 }
 
-#mode {
-  background: #64727d;
-  border-bottom: 3px solid white;
-}
-
-#clock,
-#battery,
-#temperature,
+#pulseaudio,
 #cpu,
 #memory,
-#network,
-#pulseaudio,
-#custom-spotify,
+#temperature,
+#battery,
+#clock,
 #tray,
-#mode {
-  padding: 1px 5px 0 5px;
-  margin: 0 2px;
+#custom-icon {
+  background-color: transparent;
+  color: @text;
+  margin: 0px;
+  padding: 0px 5px 0px 5px;
 }
 
-#clock {
-  font-weight: bold;
+
+.modules-left {
+  background-color: @bg;
+  padding: 0px 0px 0px 0px;
 }
 
-#battery {
-  background-image: url("/home/jtad/icons/bat.svg");
-  background-position: 90% 80%;
-  background-repeat: no-repeat;
-  background-size: 14px;
+#window {
+  color: @invText;
+  background-color: @accent;
+  padding-left: 4px;
 }
 
-#battery icon {
-  color: red;
-}
-
-#battery.charging {
-}
-
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
-}
-
-#battery.warning:not(.charging) {
-  color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#cpu {
-  background-image: url("/home/jtad/icons/cpu.svg");
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 14px;
-}
-
-#memory {
-}
-
-#network {
-  background-image: url("/home/jtad/icons/net.svg");
-  background-position: 100% 80%;
-  background-repeat: no-repeat;
-  background-size: 12px;
-}
-
-#network.disconnected {
-  background: #f53c3c;
-}
-
-#pulseaudio {
-  background-position: 5% 80%;
-  background-repeat: no-repeat;
-  background-size: 11px;
-}
-
-#pulseaudio.muted {
-}
-
-#tray {
+.modules-right {
+  background-color: @bg;
+  padding: 0px 0px 0px 0px;
 }

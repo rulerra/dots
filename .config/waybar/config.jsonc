@@ -1,0 +1,30 @@
+{
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "clock", "tray"],
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>[{:%Y %B}]</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M|%d-%m-%y}"
+    },
+    "cpu": {
+        "format": "cpu :{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "mem :{percentage}%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": "[!!{temperatureC}°C!!]",
+        "format": "{temperatureC}°C"
+    },
+    "pulseaudio": {
+        "format": "vol :{volume}%",
+        "format-muted": "VOL: M",
+        "on-click": "pavucontrol"
+    }
+}
+

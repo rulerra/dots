@@ -1,0 +1,40 @@
+{
+	"position": "top",
+    "height": 5,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["custom/weather","pulseaudio","cpu","memory","clock", "tray"],
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%I:%M|%d-%m-%y}",
+        "format-alt": "{:%Y-%m-%d}"
+      
+    },
+    "cpu": {
+        "format": " {usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}% "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": " {volume}%",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": " {format_source}",
+        "format-muted": " {format_source}",
+        //"format-source": "{volume}% ",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/?format=2'",
+        "interval": 3600
+    }
+}
