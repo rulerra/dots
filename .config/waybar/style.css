@@ -1,79 +1,37 @@
-@define-color accent #383838;
-@define-color text #f8f8f8;
-@define-color invText #f8f8f8;
-/* text when background is accent */
-@define-color bg #181818;
-
-
-/* @import "./wal.css";
-@define-color accent @color5;
-@define-color bg @background;
-@define-color text @foreground; */
-
-@import "./base16/base16-default-dark.css";
-
-@define-color accent @base01;
-@define-color text @base07;
-@define-color invText @base07;
-/* text when background is accent */
-@define-color bg @base00;
-
 * {
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 12px;
-  border-radius: 0px;
-  /* :[ */
-  min-height: 0px;
-}
-
-window#waybar {
-  background-color: @accent;
-  color: @text;
-  opacity: 1;
+    font-size: 13px;
+    min-height: 0;
 }
 
 #workspaces {
-  background-color: transparent;
-}
-
-#workspaces button {
-  padding: 0 5px;
-	color: @text;
-}
-
-#workspaces button.active {
-  background-color: @accent;
-  color: @invText;
-  /* color: @background; */
-}
-
-#pulseaudio,
-#cpu,
-#memory,
-#temperature,
-#battery,
-#clock,
-#tray,
-#custom-icon {
-  background-color: transparent;
-  color: @text;
-  margin: 0px;
-  padding: 0px 5px 0px 5px;
-}
-
-
-.modules-left {
-  background-color: @bg;
-  padding: 0px 0px 0px 0px;
+    border-right: 1px solid #a3898d;
 }
 
 #window {
-  color: @invText;
-  background-color: @accent;
-  padding-left: 4px;
+    padding-left: 9px;
 }
 
-.modules-right {
-  background-color: @bg;
-  padding: 0px 0px 0px 0px;
+window#waybar {
+    background-color: #090A0B;
+    color: #E6DFE0;
+}
+
+#pulseaudio.muted {
+    color: #e06c75;
+}
+
+#clock,
+#cpu,
+#memory,
+#disk,
+#pulseaudio {
+    padding: 0 6px 0 0;
+}
+
+#tray {
+    padding-left: 6px;
+}
+
+#clock {
+    border-right: 1px solid #a3898d;
 }

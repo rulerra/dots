@@ -1,30 +1,55 @@
 {
-    "spacing": 4,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "clock", "tray"],
-    "tray": {
-        "spacing": 10
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "cpu",
+        "memory",
+        "disk"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "clock",
+        "tray"
+    ],
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " " ]
+        }
     },
-    "clock": {
-        "tooltip-format": "<big>[{:%Y %B}]</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%I:%M|%d-%m-%y}"
+    // "hyprland/workspaces": {
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "6": "",
+    //         "7": "",
+    //         "8": "",
+    //         "9": "",
+    //         "10": ""
+    //     }
+    // },
+    "hyprland/window": {
+        "format": "  {title}"
     },
     "cpu": {
-        "format": "cpu :{usage}%",
-        "tooltip": false
+        "format": "  {usage}%"
+    },
+    "disk": {
+        "format": "  {used}",
+        "path": "/home/"
     },
     "memory": {
-        "format": "mem :{percentage}%"
+        "format": "  {used} GiB"
     },
-    "temperature": {
-        "critical-threshold": 80,
-        "format-critical": "[!!{temperatureC}°C!!]",
-        "format": "{temperatureC}°C"
-    },
-    "pulseaudio": {
-        "format": "vol :{volume}%",
-        "format-muted": "VOL: M",
-        "on-click": "pavucontrol"
+    "clock": {
+        "format": "  {:%I:%M|%d-%m-%y}"
     }
 }
-
