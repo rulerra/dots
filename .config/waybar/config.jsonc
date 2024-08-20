@@ -1,7 +1,9 @@
 {
+    "height": 20,
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
         "hyprland/workspaces",
+        "custom/separator",
         "hyprland/window"
     ],
     "modules-center": [
@@ -50,6 +52,11 @@
         "format": "  {used} GiB"
     },
     "clock": {
-        "format": "  {:%I:%M|%d-%m-%y}"
+        "format": "  {:%I:%M %d-%m-%y}"
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
     }
 }

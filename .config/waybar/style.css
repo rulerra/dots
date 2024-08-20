@@ -3,8 +3,18 @@
     min-height: 0;
 }
 
-#workspaces {
-    border-right: 1px solid #a3898d;
+/* #workspaces { */
+/*     border-right: 1px solid #a3898d; */
+/* } */
+
+#workspaces button.active {
+    background-color: #141719;
+    color: #b8543e;
+}
+
+#workspaces button.urgent {
+    background-color: #090A0B;
+    color: #e06c75;
 }
 
 #window {
@@ -25,13 +35,15 @@ window#waybar {
 #memory,
 #disk,
 #pulseaudio {
-    padding: 0 6px 0 0;
+    padding: 0 6px;
 }
 
 #tray {
+    background-color: #090A0B;
+    color: #E6DFE0;
     padding-left: 6px;
 }
 
-#clock {
-    border-right: 1px solid #a3898d;
-}
+/* #clock { */
+/*     border-right: 1px solid #a3898d; */
+/* } */
