@@ -1,0 +1,1 @@
+macro index o "<shell-escape>cd ~/dox/mail; gmi sync<enter>" "run lieer to sync margiaryan@gmail.com"
