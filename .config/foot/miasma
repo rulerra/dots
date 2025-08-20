@@ -1,0 +1,23 @@
+# _*_ conf _*_
+
+[colors]
+foreground=c2c2b0
+background=222222
+
+regular0=222222      # black
+regular1=685742      # red
+regular2=5f875f      # green
+regular3=b36d43      # yellow
+regular4=78824b      # blue
+regular5=bb7744      # magenta
+regular6=c9a554      # cyan
+regular7=d7c483      # white
+
+bright0=666666       # bright black (dark grey)
+bright1=685742       # bright red (same as regular red)
+bright2=5f875f       # bright green (same as regular green)
+bright3=b36d43       # bright yellow (same as regular yellow)
+bright4=78824b       # bright blue (same as regular blue)
+bright5=bb7744       # bright magenta (same as regular magenta)
+bright6=c9a554       # bright cyan (same as regular cyan)
+bright7=d7c483       # bright white (same as regular white)
